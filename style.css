@@ -1,0 +1,201 @@
+*{
+    
+    font-family: 'Ubuntu', sans-serif;
+}
+body{
+    margin: 0;
+    padding: 0;
+}
+/* Header */
+header{
+    width: 100%;
+    height: 100vh;
+    background-image: linear-gradient(rgba(4,9,30,0.7), rgba(4,9,30,0.7)), url(/image/background.jpg);
+    background-size: cover;
+}
+/* Nav bar */
+nav{
+    display: flex;
+    justify-content: space-between;
+    padding: 2% 5%;
+    align-items: center;
+}
+/* LOGO */
+.logo img{
+    display: block;
+    height: 50px;
+    width: auto;
+    border-radius: 10px;
+}
+
+nav ul{
+    display: flex;
+}
+nav ul li{
+    list-style: none;
+    padding: 8px 15px;
+}
+nav ul li a{
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+    font-size: 15px;
+
+}
+nav ul li::after{
+    content: '';
+    width: 0%;
+    height: 2px;
+    background-color: tomato;
+    display: block;
+    margin: auto;
+}
+nav ul li:hover::after{
+    
+    width: 100%;
+    transition: 0.5s;
+}
+#open{
+    color: white;
+    font-size: 30px;
+    cursor: pointer;
+    display: none;
+}
+#close{
+    color: white;
+    font-size: 30px;
+    cursor: pointer;
+    display: none;
+}
+nav input[type="checkbox"]{
+    display: none;
+}
+/* ----Responsive Menus---- */
+@media(max-width:700px){
+    nav ul{
+        position: fixed;
+        top: 10%;
+        left: -100%;
+        height: 80vh;
+        width: 100vw;
+        background-color: gray;
+        display: inline-block;
+        transition: all 0.5s ease;
+        border-radius: 20px;
+        box-sizing: border-box;
+        z-index: 2;
+        flex-basis: 45%;
+    }
+    nav li{
+        padding: 10px 20px;
+        margin-top: 10px;
+    }
+    
+    #open{
+        display: block;
+    }
+    #click:checked ~ #menu{
+        left: 0%;
+    }
+    #click:checked ~ label #open{
+        display: none;
+    }
+    #click:checked ~ label #close{
+        display: block;
+    }
+
+}
+/* -----Footer Part------ */
+footer{
+    display: flex;
+    flex-basis: 90%;
+    background-color: rgb(102, 97, 102);
+    justify-content: space-evenly;
+    
+}
+.footer-item{
+    color: white;
+    text-align: center;
+    flex-basis: 20%;
+}
+footer a{
+    text-decoration: none;
+    color: white;
+}
+#copyright{
+    text-align: center;
+    background-color: whitesmoke;
+    color: gray;
+    font-size: 18px;
+    padding: 10px;
+}
+/* -----Images------- */
+marquee{
+    background-color: rgb(140, 196, 140);
+}
+marquee img{
+    display: inline-block;
+    height: 150px;
+    width: 250px;
+    border-radius: 40px;
+    margin-top: 8px;
+}
+/* ----Responsive Footer----- */
+@media(max-width:700px){
+    footer{
+        flex-direction: column;
+        flex-basis: 80%;
+    }
+    .footer-item{
+        text-align: center;
+    }
+}
+/* -----Heading Text------- */
+.text{
+    width: 90%;
+    position: absolute;
+    text-align: center;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+.text h1{
+    color: white;
+    font-size: 50px;
+}
+.text p{
+    font-size: 20px;
+    color: white;
+}
+.text a{
+    display: inline-block;
+    text-decoration: none;
+    color: white;
+    background: transparent;
+    padding: 10px 30px;
+    cursor: pointer;
+}
+.text a:hover{
+    background-color: tomato;
+    transition: 0.5s;
+
+}
+/* ----course content----- */
+.main-course{
+    display: flex;
+    flex-basis: 80%;
+    justify-content: space-evenly;
+}
+.course{
+    background-color: wheat;
+    text-align: center;
+    flex-basis: 30%;
+    border-radius: 20px;
+    margin: 50px;
+}
+/* ----Responsive course---- */
+@media(max-width:700px){
+    .main-course{
+        flex-direction: column;
+    }
+}
